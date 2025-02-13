@@ -1,10 +1,18 @@
 import streamlit as st
 import google.generativeai as genai
 import time
+import os
+API_KEY = os.getenv("API_KEY")  # for  Secure api keys
+# this api key is securely deployed in streamlit community cloud, it will automaticaly inject key to the environment
 
 
 
-genai.configure(api_key="AIzaSyAq11QwC0uNgC15RhsBpOzsgUvwRFfbZLc")
+
+if not API_KEY:
+    st.error("API Key is missing. Please set it in your environment variables.")
+else:
+    genai.configure(api_key=API_KEY)
+
 sys_prompt = """
 You are an advanced Python code reviewer. Your task is to analyze the given Python code, identify potential bugs, logical errors, and areas of improvement, and suggest fixes.
 
