@@ -7,6 +7,7 @@ This project is an AI-based code reviewer that detects **bugs, inefficiencies, a
 - Python
 - Streamlit
 - Google Gemini AI API
+- Google GenerativeAI
 
 ## Features
 ✅ Bug Detection  
